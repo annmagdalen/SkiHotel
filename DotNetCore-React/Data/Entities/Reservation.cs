@@ -7,5 +7,6 @@ namespace DotNetCoreReact.Data.Entities
         public int Id { get; set; }
         public DateTime DateTime { get; set; }
         public bool Classic { get; set; }
+        public User User { get; set; }
     }
 }

@@ -13,6 +13,11 @@
   "ConnectionStrings": {
     "ConnectionString": "server=(localdb)\\v11.0;Database=Db;Integrated Security=true;MultipleActiveResultSets=true;"
   },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning"
+    }
+  },
   "exclude": [
       "bin",
       "node_modules"

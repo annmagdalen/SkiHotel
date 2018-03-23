@@ -1,6 +1,8 @@
 using DotNetCoreReact.Data;
+using DotNetCoreReact.Data.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +22,12 @@ namespace DotNetCore_React
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<User, IdentityRole>(cfg =>
+            {
+                cfg.User.RequireUniqueEmail = true;
+            })
+            .AddEntityFrameworkStores<Context>();
+
             services.AddDbContext<Context>(cfg =>
             {
                 cfg.UseSqlServer(Configuration.GetConnectionString("ConnectionString"));
@@ -45,6 +53,8 @@ namespace DotNetCore_React
             }
 
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
