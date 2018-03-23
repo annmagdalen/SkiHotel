@@ -1,12 +1,24 @@
 import * as React from 'react';
 import { Route } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './theme';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
+import { Reserve } from './components/Reserve';
+import { Reservations } from './components/Reservations';
+import { About } from './components/About';
+import { Contact } from './components/Contact';
+import { Faq } from './components/Faq';
 
-export const routes = <Layout>
-    <Route exact path='/' component={ Home } />
-    <Route path='/counter' component={ Counter } />
-    <Route path='/fetchdata' component={ FetchData } />
-</Layout>;
+export const routes = (
+    <ThemeProvider theme={theme}>
+        <Layout>
+            <Route exact path='/' component={Home} />
+            <Route path='/reserve' component={Reserve} />
+            <Route path='/reservations' component={Reservations} />
+            <Route path='/about' component={ About } />
+            <Route path='/contact' component={Contact} />
+            <Route path='/faq' component={Faq} />
+        </Layout>
+    </ThemeProvider>
+);

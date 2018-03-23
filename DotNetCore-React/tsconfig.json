@@ -8,7 +8,10 @@
     "sourceMap": true,
     "skipDefaultLibCheck": true,
     "strict": true,
-    "types": [ "webpack-env" ]
+    "types": [ "webpack-env", "node" ],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
   "ConnectionStrings": {
     "ConnectionString": "server=(localdb)\\v11.0;Database=Db;Integrated Security=true;MultipleActiveResultSets=true;"
