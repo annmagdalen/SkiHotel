@@ -37,9 +37,9 @@ export class Footer extends React.Component<{}, {}> {
         return (
             <FooterWrapper>
                 <FirstRow>
-                    <Link to={'/'}>About</Link>
-                    <Link to={'/'}>Contact</Link>
-                    <Link to={'/'}>Faq</Link>
+                    <Link to={'/about'}>About</Link>
+                    <Link to={'/contact'}>Contact</Link>
+                    <Link to={'/faq'}>Faq</Link>
                 </FirstRow>
                 <p>&copy; Ski Hotel {year}</p>
             </FooterWrapper>
