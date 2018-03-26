@@ -13,7 +13,7 @@ const sizes: IMediaSizes = {
     lg: 992,
     md: 768,
     sm: 576
-}
+};
 
 const foo: any = {};
 

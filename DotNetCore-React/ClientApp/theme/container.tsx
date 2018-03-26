@@ -24,4 +24,4 @@ ${media.sm(css`width: ${sizes.sm}px;`)}
 ${media.md(css`width: ${sizes.md}px;`)}
 ${media.lg(css`width: ${sizes.lg}px;`)}
 ${media.xl(css`width: ${sizes.xl}px;`)}
-`;
+`

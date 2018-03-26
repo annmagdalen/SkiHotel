@@ -13,7 +13,7 @@ text-align: center;
 font-size: 0.75rem;
 margin: 0;
 }
-`;
+`
 
 const FirstRow = styled.div`
 display: flex;
@@ -27,7 +27,7 @@ color: white;
 font-size: 1.125rem;
 margin: 0 1.5rem;
 }
-`;
+`
 
 export class Footer extends React.Component<{}, {}> {
     public render() {
