@@ -10,18 +10,19 @@ import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Faq } from './components/Faq';
 import './theme/global';
+import { Container } from './theme/container';
 
 export const routes = (
     <ThemeProvider theme={theme}>
         <Layout>
-            <section>
+            <Container>
                 <Route exact path='/' component={Home} />
                 <Route path='/reserve' component={Reserve} />
                 <Route path='/reservations' component={Reservations} />
                 <Route path='/about' component={ About } />
                 <Route path='/contact' component={Contact} />
                 <Route path='/faq' component={Faq} />
-            </section>
+            </Container>
         </Layout>
     </ThemeProvider>
 );

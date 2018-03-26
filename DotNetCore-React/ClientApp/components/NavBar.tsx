@@ -1,39 +1,44 @@
 import * as React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { Container } from '../theme/container';
 
-const Bar = styled.nav`
+const NavWrapper = styled.nav`
 background-color: ${({ theme }) => theme.primary};
+`;
+
+const Row = styled.div`
 display: flex;
 justify-content: space-between;
-padding: 1rem 3rem;
+padding: 1rem 0;
+`;
 
-> a {
+const Logo = styled(Link)`
 color: white;
 font-size: 1.5rem;
 font-weight: bold;
 text-transform: uppercase;
-    }
 `;
 
-const PullToRight = styled.div`
-> a {
+const StyledLink = styled(NavLink)`
 color: white;
-font-size: 1.25rem;
-font-weight: bold;
-margin-left: 4rem;
-}
+font-size: 1.125rem;
+line-height: 2;
+margin-left: 3rem;
 `;
 
 export class NavBar extends React.Component<{}, {}> {
     public render() {
-        return <Bar>
-            <Link to={'/'}>Ski Hotel</Link>
-            <PullToRight>
-                <NavLink to={'/register'}>Register</NavLink>
-                <NavLink to={'/log-in'}>Log in</NavLink>
-            </PullToRight>
-            </Bar>
-           ;
+        return <NavWrapper>
+            <Container>
+                <Row>
+                    <Logo to={'/'}>Ski Hotel</Logo>
+                    <div>
+                        <StyledLink to={'/register'}>Register</StyledLink>
+                        <StyledLink to={'/log-in'}>Log in</StyledLink>
+                    </div>
+                </Row>
+            </Container>
+        </NavWrapper>
     }
 }
