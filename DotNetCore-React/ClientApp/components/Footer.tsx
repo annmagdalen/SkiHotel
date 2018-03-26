@@ -1,40 +1,46 @@
 ﻿import * as React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Wrapper = styled.footer`
+background-color: ${({ theme }) => theme.primary};
+color: white;
+padding: 0.75rem 3rem 0;
+text-align: center;
+
+> p {
+font-size: 0.75rem;
+margin: 0;
+}
+`;
+
+const FirstRow = styled.div`
+display: flex;
+justify-content: center;
+padding-bottom: 0.75rem;
+
+> a {
+color: white;
+font-size: 1.125rem;
+font-weight: bold;
+margin: 0 1rem;
+    }
+`;
 
 export class Footer extends React.Component<{}, {}> {
     public render() {
-        return <div className='main-nav'>
-            <div className='navbar navbar-inverse'>
-                <div className='navbar-header'>
-                    <button type='button' className='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
-                        <span className='sr-only'>Toggle navigation</span>
-                        <span className='icon-bar'></span>
-                        <span className='icon-bar'></span>
-                        <span className='icon-bar'></span>
-                    </button>
-                    <Link className='navbar-brand' to={'/'}>DotNetCore_React</Link>
-                </div>
-                <div className='clearfix'></div>
-                <div className='navbar-collapse collapse'>
-                    <ul className='nav navbar-nav'>
-                        <li>
-                            <NavLink to={'/'} exact activeClassName='active'>
-                                <span className='glyphicon glyphicon-home'></span> Home
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={'/counter'} activeClassName='active'>
-                                <span className='glyphicon glyphicon-education'></span> Counter
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={'/fetchdata'} activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Fetch data
-                            </NavLink>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>;
+        const date = new Date();
+        const year = date.getFullYear();
+
+        return <Wrapper>
+            <FirstRow>
+                <Link to={'/'}>About</Link>
+                <Link to={'/'}>Contact</Link>
+                <Link to={'/'}>Faq</Link>
+            </FirstRow>
+            <p>&copy; Ski Hotel {year}</p>
+        </Wrapper>
+            ;
     }
 }
+
